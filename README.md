@@ -1,4 +1,4 @@
 # BEEFtoCalendar
 
-1.準備するもの
-　Docker  Selenium  BeautifuSoup4  ChromeDriver  
+1. 準備するもの
+　Docker / Selenium / BeautifuSoup4 / ChromeDriver  
