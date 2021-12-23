@@ -73,9 +73,9 @@ DaynEvent_tags = soup.find_all("td", class_="hasevent")
 SCOPES = ['https://www.googleapis.com/auth/calendar']
 
 # カレンダーIDの設定(gmailのアドレス)
-calendar_id = 'chiffon353@gmail.com'
+calendar_id = 'メアド入れる@gmail.com'
 
-CRED_FILE = 'credential_oauth.json'
+CRED_FILE = 'credential.json'
 
 # Googleにcalendarへのアクセストークンを要求してcredsに格納
 creds = None
@@ -111,7 +111,7 @@ events = GoogleEvents_result.get('items', [])
 # Googleカレンダーに予定があった場合には、出力
 for event in events:
    start = event['start'].get('dateTime', event['start'].get('date'))
-   if "課題" in event['summary']:
+   if "課題（←ここに今カレンダー上にある課題のタイトルの一部を入力してプリントされるか試す）" in event['summary']:
       print(start, event['summary'])
 
 #　BEEFから課題内容とってくる　
