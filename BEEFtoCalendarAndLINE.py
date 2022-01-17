@@ -26,9 +26,9 @@ driver.get(login_url)
 time.sleep(3)
 
 LoginID_box = driver.find_element_by_id("j_username")
-LoginID_box.send_keys('学籍番号アルファベット小文字')
+LoginID_box.send_keys('学番')
 password_box = driver.find_element_by_name("j_password")
-password_box.send_keys('パスワード')
+password_box.send_keys('パス')
 login_button = driver.find_element_by_name("_eventId_proceed")
 login_button.click()
 time.sleep(3)
@@ -53,7 +53,8 @@ for element in results:
     print(element.text)
 
 # 直近のイベント　カレンダーへ移動をクリック
-IdouCalendar = driver.find_element_by_css_selector("#inst78344 > div > div > div.footer > div > a")
+# IdouCalendar = driver.find_element_by_css_selector("#inst78344 > div > div > div.footer > div > a")
+IdouCalendar = driver.find_element_by_class_name("gotocal")
 print(IdouCalendar)
 IdouCalendar.click()
 time.sleep(2)
@@ -103,7 +104,7 @@ now = datetime.datetime.utcnow().isoformat() + 'Z'
 # Googleカレンダーから予定を取得
 GoogleEvents_result = service.events().list(calendarId="primary",
                                       # timeMin= now + str(datetime.timedelta(weeks=-8)),
-                                      maxResults=30, singleEvents=True,
+                                      maxResults=500,singleEvents=True,
                                       orderBy='startTime').execute()
 events = GoogleEvents_result.get('items', [])
 
