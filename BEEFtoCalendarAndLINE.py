@@ -178,7 +178,7 @@ for tag in DaynEvent_tags:
 
     # LINEで通知を送信
     url = "https://notify-api.line.me/api/notify"
-    access_token = 'oFHesennLfLemsU2oCcOShKDGbCfF0r6h0Bw1w3jBR4'
+    access_token = 'ここに入れる'
     headers = {'Authorization': 'Bearer ' + access_token}
 
     message = [ "new!" + str(EventTitle[0].text) + " を追加しました" ]
